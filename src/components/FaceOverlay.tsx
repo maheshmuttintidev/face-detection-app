@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { calculateAllFaceRects } from "../utils/faceBoxUtils";
+import { calculateAllFaceRects, FaceRectType } from "../utils/faceBoxUtils";
 
 type Props = {
   imageSrc: string;
@@ -10,8 +11,8 @@ type Props = {
 
 export default function FaceOverlay({ imageSrc }: Props) {
   const imgRef = useRef<HTMLImageElement>(null);
-  const [faceRects, setFaceRects] = useState<any[]>([]);
-  const [imgSize, setImgSize] = useState({ width: 0, height: 0 });
+  const [faceRects, setFaceRects] = useState<FaceRectType[]>([]);
+  // const [imgSize, setImgSize] = useState({ width: 0, height: 0 });
 
   // Mock original image size and bounding boxes (simulate API result)
   const originalSize = { width: 2000, height: 1000 };
@@ -25,9 +26,10 @@ export default function FaceOverlay({ imageSrc }: Props) {
 
     const resizedW = imgRef.current.clientWidth;
     const resizedH = imgRef.current.clientHeight;
-    setImgSize({ width: resizedW, height: resizedH });
+    // setImgSize({ width: resizedW, height: resizedH });
 
     const result = calculateAllFaceRects(
+      // @ts-expect-error
       boundingBoxes,
       originalSize.width,
       originalSize.height,
@@ -38,7 +40,7 @@ export default function FaceOverlay({ imageSrc }: Props) {
   }, [imageSrc]);
 
   return (
-    <div className="relative">
+    <div className="relative mt-4 mb-8">
       <Image
         ref={imgRef}
         src={imageSrc}
