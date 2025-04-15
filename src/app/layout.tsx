@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Face Detection",
   description: "Developed by Mahesh Muttinti",
-  metadataBase: new URL("https://face-detection.vercel.app"),
+  metadataBase: new URL("https://face-detection-pro.vercel.app"),
   openGraph: {
     title: "Face Detection",
     description: "Developed by Mahesh Muttinti",
