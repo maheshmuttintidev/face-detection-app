@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export async function GET() {
+export default async function GET() {
   return new ImageResponse(
     (
       <div
@@ -14,11 +14,11 @@ export async function GET() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '60px',
+          fontSize: '100px',
           fontWeight: 'bold',
         }}
       >
-        Face Detection by Mahesh Muttinti
+        Face Detection
       </div>
     ),
     {
