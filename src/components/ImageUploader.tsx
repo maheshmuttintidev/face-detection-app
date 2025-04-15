@@ -43,7 +43,7 @@ export default function ImageUploader({ onUpload }: Props) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full mx-auto">
       <div
         onClick={handleClick}
         onDragOver={handleDragOver}

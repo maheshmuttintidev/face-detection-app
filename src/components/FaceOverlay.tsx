@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { calculateAllFaceRects, FaceRectType } from "../utils/faceBoxUtils";
 
@@ -40,14 +40,13 @@ export default function FaceOverlay({ imageSrc }: Props) {
   }, [imageSrc]);
 
   return (
-    <div className="relative mt-4 mb-8">
-      <Image
+    <div className="relative mt-4 mb-8 w-full">
+      <img
         ref={imgRef}
         src={imageSrc}
         alt="Uploaded"
-        width={600}
-        height={600}
-        className="border rounded-md"
+        width={300}
+        className="border h-auto rounded-md"
       />
       {faceRects.map((rect, index) => (
         <div

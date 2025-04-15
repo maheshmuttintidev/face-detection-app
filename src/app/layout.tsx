@@ -16,6 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Face Detection",
   description: "Developed by Mahesh Muttinti",
+  metadataBase: new URL("https://face-detection.vercel.app"),
+  openGraph: {
+    title: "Face Detection",
+    description: "Developed by Mahesh Muttinti",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Face Detection",
+    description: "Developed by Mahesh Muttinti",
+    images: ["/twitter-image"],
+  },
 };
 
 export default function RootLayout({
@@ -29,16 +41,16 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Face Detection" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased items-center`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased items-center container mx-auto pb-6`}
       >
         <h1 className="text-5xl md:text-6xl text-center mt-4">
           Face Detection
         </h1>
         <div className="mt-4">
           <img
-            src="/web-app-manifest-192x192.png"
+            src="/web-app-manifest-512x512.png"
             alt="placeholder"
-            className="mx-auto w-full h-full object-cover opacity-40 rounded-md"
+            className="mx-auto w-full h-[512px] object-contain opacity-40 rounded-md brightness-105"
           />
         </div>
         {children}
